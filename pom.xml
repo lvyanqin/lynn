@@ -53,14 +53,11 @@
             <artifactId>commons-codec</artifactId>
             <version>1.4</version>
         </dependency>
-<<<<<<< HEAD
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
         </dependency>
-=======
->>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
     </dependencies>
 
     <build>

@@ -5,7 +5,7 @@
  */
 package com.lynn.controller;
 
-<<<<<<< HEAD
+
 import com.lynn.bean.ResultBean;
 import com.lynn.bean.UserBean;
 import java.io.IOException;
@@ -16,12 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-=======
-import com.lynn.bean.UserBean;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
->>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -33,18 +27,17 @@ public class LoginAction {
     
    
     @RequestMapping(value = "/login.do", method = RequestMethod.POST,  produces = "text/html;charset=UTF-8" )
-<<<<<<< HEAD
     @ResponseBody
     public String loginAction(HttpServletRequest request, UserBean user) throws IOException{
-        System.out.println("ã€ã€‘" + user);
+        System.out.println("¡¾¡¿" + user);
         String username = user.getUsername();
         String password = user.getPassword();
         ResultBean result = null;
         if(StringUtils.isBlank(username) || StringUtils.isBlank(password)){
-            result = new ResultBean("error", "ç”¨æˆ·åæˆ–å¯†ç ä¸èƒ½ä¸ºç©º!");
+            result = new ResultBean("error", "ÓÃ»§Ãû»òÃÜÂë²»ÄÜÎª¿Õ!");
             
         }else if(!"lynn".equalsIgnoreCase(username) || !"123456".equals(password)){
-            result = new ResultBean("error", "ç”¨æˆ·åæˆ–å¯†ç ä¸å¯¹!");
+            result = new ResultBean("error", "ÓÃ»§Ãû»òÃÜÂë²»¶Ô!");
         }else{
             result = new ResultBean("ok", "1");
             request.getSession().setAttribute("user", user);
@@ -61,17 +54,7 @@ public class LoginAction {
             return mv;
         }
         mv.addObject("username", user.getUsername());
-=======
-    public ModelAndView login_post(UserBean user){
-        System.out.println("ã€ã€‘" + user);
-        ModelAndView mv = new ModelAndView();
->>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
         mv.setViewName("login_success");
         return mv;
     }
-    
-<<<<<<< HEAD
-    
-=======
->>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
 }

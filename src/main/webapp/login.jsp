@@ -13,7 +13,6 @@
     </head>
     <body>
         <div>
-<<<<<<< HEAD
             用户名：<input name="username" value="lynn"/><br/>
             密码：<input type="password" name="password" value="123456"/><br/>
             <input id="loginButton" type="button" value="登录">
@@ -47,14 +46,4 @@
         });
 
     </script>
-
-=======
-            <form action="/lynn/login.do" method="post">
-                用户名：<input name="username"/><br/>
-                密码：<input type="password" name="password"/><br/>
-                <input type="submit" value="登录">
-            </form>
-        </div>
-    </body>
->>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
 </html>
