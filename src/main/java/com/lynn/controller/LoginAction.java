@@ -5,6 +5,7 @@
  */
 package com.lynn.controller;
 
+<<<<<<< HEAD
 import com.lynn.bean.ResultBean;
 import com.lynn.bean.UserBean;
 import java.io.IOException;
@@ -15,6 +16,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+=======
+import com.lynn.bean.UserBean;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+>>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -26,6 +33,7 @@ public class LoginAction {
     
    
     @RequestMapping(value = "/login.do", method = RequestMethod.POST,  produces = "text/html;charset=UTF-8" )
+<<<<<<< HEAD
     @ResponseBody
     public String loginAction(HttpServletRequest request, UserBean user) throws IOException{
         System.out.println("【】" + user);
@@ -53,9 +61,17 @@ public class LoginAction {
             return mv;
         }
         mv.addObject("username", user.getUsername());
+=======
+    public ModelAndView login_post(UserBean user){
+        System.out.println("【】" + user);
+        ModelAndView mv = new ModelAndView();
+>>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
         mv.setViewName("login_success");
         return mv;
     }
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
 }

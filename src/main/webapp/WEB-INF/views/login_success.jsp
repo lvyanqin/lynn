@@ -12,6 +12,10 @@
         <title>登录成功</title>
     </head>
     <body>
+<<<<<<< HEAD
         <h1>欢迎${username}</h1>
+=======
+        <h1>登录成功页面</h1>
+>>>>>>> 3e07327f6ff0752830ddb413e4d78784ba6eb70d
     </body>
 </html>
