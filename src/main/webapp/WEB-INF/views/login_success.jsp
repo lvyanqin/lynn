@@ -12,6 +12,6 @@
         <title>登录成功</title>
     </head>
     <body>
-        <h1>登录成功页面</h1>
+        <h1>欢迎${username}</h1>
     </body>
 </html>
