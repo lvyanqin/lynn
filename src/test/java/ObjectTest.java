@@ -29,7 +29,7 @@ public class ObjectTest {
                 
     }
     
-//    @Test
+    @Test
     public void equals1(){
         boolean a = (null == null);
         String temp1 = null;
