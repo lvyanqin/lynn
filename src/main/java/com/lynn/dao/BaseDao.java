@@ -9,6 +9,7 @@ package com.lynn.dao;
  *
  * @author Administrator
  */
+
 public class BaseDao {
     
 }
