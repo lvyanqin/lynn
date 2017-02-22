@@ -11,8 +11,6 @@
 public class Test {
     
     @org.junit.Test
-    public void init(){
-        
-    }
+    public void init(){}
     
 }
