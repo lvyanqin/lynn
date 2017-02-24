@@ -8,10 +8,12 @@ package com.lynn.controller;
 
 import com.lynn.bean.ResultBean;
 import com.lynn.bean.UserBean;
+import com.lynn.dao.UserDaoI;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,22 +27,28 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginAction {
     
+    @Autowired
+    private UserDaoI userDaoI;
    
     @RequestMapping(value = "/login.do", method = RequestMethod.POST,  produces = "text/html;charset=UTF-8" )
     @ResponseBody
     public String loginAction(HttpServletRequest request, UserBean user) throws IOException{
-        System.out.println("¡¾¡¿" + user);
+        System.out.println("ï¿½ï¿½ï¿½ï¿½" + user);
         String username = user.getUsername();
         String password = user.getPassword();
         ResultBean result = null;
         if(StringUtils.isBlank(username) || StringUtils.isBlank(password)){
-            result = new ResultBean("error", "ÓÃ»§Ãû»òÃÜÂë²»ÄÜÎª¿Õ!");
-            
-        }else if(!"lynn".equalsIgnoreCase(username) || !"123456".equals(password)){
-            result = new ResultBean("error", "ÓÃ»§Ãû»òÃÜÂë²»¶Ô!");
-        }else{
-            result = new ResultBean("ok", "1");
-            request.getSession().setAttribute("user", user);
+            result = new ResultBean("error", "ç”¨æˆ·åå’Œå¯†ç ä¸èƒ½ä¸ºç©º");
+            return new ObjectMapper().writeValueAsString(result);
+        }
+        UserBean tempUser = userDaoI.getByName(username);
+        if(tempUser != null){
+            if(!username.equalsIgnoreCase(tempUser.getUsername()) || !password.equalsIgnoreCase(tempUser.getPassword())){
+            result = new ResultBean("error", "ç”¨æˆ·åæˆ–å¯†ç ä¸æ­£ç¡®!");
+            }else{
+                result = new ResultBean("ok", "1");
+                request.getSession().setAttribute("user", user);
+            }
         }
         return new ObjectMapper().writeValueAsString(result);
     }
