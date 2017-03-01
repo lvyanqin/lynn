@@ -23,14 +23,15 @@ public class HttpAction {
     @RequestMapping("/header.do")
     @ResponseBody
     public String header(@RequestHeader("Host") String  host, @RequestHeader("host") String host2){
-        return host + ":" + host2;
+        return host + ":" + host2;//不区分大小写
     }
     
     @RequestMapping("/header1.do")
     @ResponseBody
     public String header1(HttpServletRequest request){
         Enumeration e = request.getHeaderNames();
-        return "";
+        String query = request.getQueryString();//只获取get后的参数
+        return query;
     }
     
 }
