@@ -1,4 +1,5 @@
 
+import com.lynn.bean.UserBean;
 import java.util.Objects;
 import org.junit.Test;
 
@@ -50,6 +51,18 @@ public class ObjectTest {
         boolean isResult3 = ((1 + "").equals(1 + ""));
         boolean isResult4 = (new Integer(1).equals(1));
         System.out.println("【】" + isResult + "_" + isResult1 + "_" + isResult2 + "_" + isResult3 + "_" + isResult4);
+    }
+    
+//    @Test
+    public void testObject(){
+        UserBean userBean = new UserBean();
+        userBean.setId(1);
+        set(userBean);
+        System.out.println("【】" + userBean.getPassword());
+    }
+    
+    public void set(UserBean userBean){
+        userBean.setPassword("22");
     }
     
     
