@@ -1,5 +1,7 @@
 
 import com.lynn.bean.UserBean;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import org.junit.Test;
 
@@ -30,7 +32,7 @@ public class ObjectTest {
                 
     }
     
-    @Test
+//    @Test
     public void equals1(){
         boolean a = (null == null);
         String temp1 = null;
@@ -63,6 +65,14 @@ public class ObjectTest {
     
     public void set(UserBean userBean){
         userBean.setPassword("22");
+    }
+    
+//    @Test
+    public void object(){
+        Map map;
+        map = null;
+        Map map1 = new HashMap();
+        map = map1;
     }
     
     
