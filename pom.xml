@@ -73,6 +73,13 @@
             <artifactId>hibernate-core</artifactId>
             <version>5.2.5.Final</version>
         </dependency>
+        <dependency>
+            <groupId>com.zilin</groupId>
+            <artifactId>util</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/util.jar</systemPath>            
+        </dependency>
 
     </dependencies>
 
