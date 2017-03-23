@@ -1,3 +1,5 @@
+package com.lynn.test;
+
 
 import org.junit.Test;
 
@@ -11,14 +13,16 @@ import org.junit.Test;
  *
  * @author Administrator
  */
-public class LongTest {
+public class Md5Test {
     
     @Test
-    public void init(){}
-    
-    @Test
-    public void testLong(){
-        long L = 201605031522L;
-        System.out.println("【】" + (L + 1) );
+    public void init(){
+        System.out.println("Md5Test.init()");
     }
+    
+    @Test
+    public void md5(){
+        
+    }
+    
 }

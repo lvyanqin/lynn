@@ -1,3 +1,5 @@
+package com.lynn.test;
+
 
 import com.lynn.bean.UserBean;
 import java.util.HashMap;

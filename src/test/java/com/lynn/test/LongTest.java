@@ -1,3 +1,5 @@
+package com.lynn.test;
+
 
 import org.junit.Test;
 
@@ -11,13 +13,14 @@ import org.junit.Test;
  *
  * @author Administrator
  */
-public class ThreadTest {
+public class LongTest {
     
     @Test
     public void init(){}
     
-    public void thread(){
-        
+    @Test
+    public void testLong(){
+        long L = 201605031522L;
+        System.out.println("【】" + (L + 1) );
     }
-    
 }

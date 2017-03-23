@@ -1,3 +1,5 @@
+package com.lynn.test;
+
 
 import org.junit.Test;
 

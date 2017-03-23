@@ -1,3 +1,5 @@
+package com.lynn.test;
+
 
 import org.junit.Test;
 
@@ -11,15 +13,12 @@ import org.junit.Test;
  *
  * @author Administrator
  */
-public class Md5Test {
+public class ThreadTest {
     
     @Test
-    public void init(){
-        System.out.println("Md5Test.init()");
-    }
+    public void init(){}
     
-    @Test
-    public void md5(){
+    public void thread(){
         
     }
     
