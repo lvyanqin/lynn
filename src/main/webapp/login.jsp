@@ -18,7 +18,7 @@
             <input id="loginButton" type="button" value="登录">
         </div>
     </body>
-    <script src="/lynn/js/jquery-2.2.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.2.2.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#loginButton").click(function () {

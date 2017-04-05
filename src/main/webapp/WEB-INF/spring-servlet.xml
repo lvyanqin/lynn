@@ -11,26 +11,6 @@
     <mvc:annotation-driven />
     <context:component-scan base-package="com.lynn" /> 
     
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
-                <prop key="hibernate.show.sql">true</prop>
-                <prop key="format_sql">true</prop>
-            </props>
-        </property>
-    </bean>
-    
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="url" value="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=lynn"/>
-        <property name="username" value="sa"/>
-        <property name="password" value="123456"/>
-    </bean>
-    
-    
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
         <property name="suffix" value=".jsp" />
