@@ -13,11 +13,11 @@
           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd
 ">
-<mvc:annotation-driven />
+    <mvc:annotation-driven />
     <context:component-scan base-package="com.lynn" /> 
     <mvc:annotation-driven></mvc:annotation-driven>
     
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <!--    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="hibernateProperties">
             <props>
@@ -28,14 +28,34 @@
             </props>
         </property>
         <property name="packagesToScan" value="com.lynn.bean" /> 
-    </bean>
+    </bean>-->
     
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />  
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>  
+                <prop key="hibernate.hbm2ddl.auto">update</prop>  
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="format_sql">true</prop>
+            </props>  
+        </property>  
+        <property name="packagesToScan" value="com.lynn.bean" /> 
+    </bean> 
+         
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">    
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
+        <property name="url" value="jdbc:mysql://bdm274886599.my3w.com/bdm274886599_db?useUnicode=true&amp;characterEncoding=utf-8" />  
+        <property name="username" value="bdm274886599" />  
+        <property name="password" value="911huqi911" />  
+    </bean>   
+    
+<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
         <property name="url" value="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=lynn"/>
         <property name="username" value="sa"/>
         <property name="password" value="123456"/>
-    </bean>
+    </bean>-->
     
     
 </beans>
