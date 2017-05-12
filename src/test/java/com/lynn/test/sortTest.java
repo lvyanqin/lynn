@@ -30,6 +30,7 @@ public class sortTest {
             map.put("value", values[i]);
             list.add(map);
         }
+        List<Map> newList = new ArrayList<>(list.size());
         for(int i = 0; i < list.size() ; i ++){
             Integer tempValue_i = Integer.parseInt(list.get(i).get("value").toString());
             int k = 0, m = 0;
