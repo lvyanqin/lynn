@@ -27,8 +27,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginAction {
     
-    @Autowired
-    private UserDaoI userDaoI;
+//    @Autowired
+//    private UserDaoI userDaoI;
    
     @RequestMapping(value = "/login.do", method = RequestMethod.POST,  produces = "text/html;charset=UTF-8" )
     @ResponseBody
@@ -41,15 +41,15 @@ public class LoginAction {
             result = new ResultBean("error", "用户名和密码不能为空");
             return new ObjectMapper().writeValueAsString(result);
         }
-        UserBean tempUser = userDaoI.getByName(username);
-        if(tempUser != null){
-            if(!username.equalsIgnoreCase(tempUser.getUsername()) || !password.equalsIgnoreCase(tempUser.getPassword())){
-            result = new ResultBean("error", "用户名或密码不正确!");
-            }else{
-                result = new ResultBean("ok", "1");
-                request.getSession().setAttribute("user", user);
-            }
-        }
+//        UserBean tempUser = userDaoI.getByName(username);
+//        if(tempUser != null){
+//            if(!username.equalsIgnoreCase(tempUser.getUsername()) || !password.equalsIgnoreCase(tempUser.getPassword())){
+//            result = new ResultBean("error", "用户名或密码不正确!");
+//            }else{
+//                result = new ResultBean("ok", "1");
+//                request.getSession().setAttribute("user", user);
+//            }
+//        }
         return new ObjectMapper().writeValueAsString(result);
     }
     
