@@ -53,7 +53,15 @@ public class Modal1 {
         return "redirect:/modal1/b.do";
     }
     
-     @RequestMapping(value="/b.do")
+    /**
+     * s2 和map可以直接通过el取数据
+     * 
+     * @param s2
+     * @param map
+     * @return
+     * @throws IOException 
+     */
+    @RequestMapping(value="/b.do")
     public ModelAndView b(@ModelAttribute("s2") String s2, @ModelAttribute("map") String map) throws IOException{
         ModelAndView mv = new ModelAndView();
         System.out.println("com.lynn.controller.Modal1.b()");
@@ -64,5 +72,33 @@ public class Modal1 {
         mv.setViewName("login_success");
         return mv;
     }
+    
+    @RequestMapping(value="/bb")
+    public ModelAndView bb() throws IOException{
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("login_success");
+        return mv;
+    }
+    
+//    @RequestMapping(value="/bb.jsp")
+//    public ModelAndView bb1() throws IOException{
+//        ModelAndView mv = new ModelAndView();
+//        mv.setViewName("/WEB-INF/views/login_success.jsp");
+//        return mv;
+//    }
+    
+    @RequestMapping(value="/cc")
+    public ModelAndView cc() throws IOException{
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("forward:/modal1/bb");
+        return mv;
+    }
+    
+//    @RequestMapping(value="/dd")
+//    public ModelAndView dd() throws IOException{
+//        ModelAndView mv = new ModelAndView();
+//        mv.setViewName("/modal1/bb.jsp");
+//        return mv;
+//    }
     
 }
