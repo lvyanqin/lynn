@@ -10,6 +10,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
+import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -57,7 +58,9 @@ public class Modal1 {
         ModelAndView mv = new ModelAndView();
         System.out.println("com.lynn.controller.Modal1.b()");
         mv.addObject("s3", s2 + "dksjaflkaj");
-        mv.addObject("map", new ObjectMapper().readValue(map, Map.class));
+        if(StringUtils.isNotBlank(map)){
+            mv.addObject("map", new ObjectMapper().readValue(map, Map.class));
+        }
         mv.setViewName("login_success");
         return mv;
     }
